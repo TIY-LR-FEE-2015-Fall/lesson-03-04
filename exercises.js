@@ -47,10 +47,22 @@ console.assert(isVowel('u') === true);
 // For example, translate("this is fun") should return the string "tothohisos isos fofunon".
 // ---------------------
 
-function rovarspraket(phrase) {
+function translate(phrase) {
   'use strict';
-  //...
+  var charArray = phrase.split('');
+
+  function translateChar(item) {
+    if (isVowel(item) || item === ' ') {
+      return item;
+    }
+
+    return item + 'o' + item;
+  };
+
+  return charArray.map(translateChar).join('');
 }
+
+console.assert(translate('it') === 'itot');
 
 // ---------------------
 // Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
@@ -67,7 +79,8 @@ function multiply() {
 }
 
 // ---------------------
-// Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
+// Define a function reverse() that computes the reversal of a string.
+// For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
 
 function reverse() {
