@@ -57,7 +57,7 @@ function translate(phrase) {
     }
 
     return item + 'o' + item;
-  };
+  }
 
   return charArray.map(translateChar).join('');
 }
@@ -78,7 +78,7 @@ function sum(numbers) {
   });
 }
 
-sum([1, 2, 3, 4]);
+console.assert(sum([1, 2, 3, 4]) === 10);
 
 function multiply(numbers) {
   'use strict';
@@ -88,15 +88,31 @@ function multiply(numbers) {
   });
 }
 
+console.assert(multiply([1, 2, 3, 4]) === 24);
+
 // ---------------------
 // Define a function reverse() that computes the reversal of a string.
 // For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
 
-function reverse() {
+function reverse(word) {
   'use strict';
-  //...
+
+  var characters = word.split('');
+
+  var result = '';
+
+  for (var i = characters.length; i > 0; i--) {
+    result += characters[i - 1];
+  }
+
+  return result;
 }
+
+console.assert(reverse('a') === 'a');
+console.assert(reverse('to') === 'ot');
+console.assert(reverse('ryan') === 'nayr');
+console.assert(reverse('jag testar') === 'ratset gaj');
 
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
