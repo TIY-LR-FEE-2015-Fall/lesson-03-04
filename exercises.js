@@ -6,18 +6,23 @@
 // Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript.
 // ---------------------
 
-function max() {
+function max(x, y) {
   'use strict';
-  //...
+  if (x > y) {
+    return x;
+  }
+
+  return y;
 }
 
 // ---------------------
-// Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
+// Define a function maxOfAll() that takes any number of arguments and returns the largest of them.
 // ---------------------
 
-function maxOfThree() {
+function maxOfAll() {
   'use strict';
-  //...
+
+  Array.from(arguments).reduce(max);
 }
 
 // ---------------------
