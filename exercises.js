@@ -32,8 +32,19 @@ function maxOfAll() {
 function isVowel(char) {
   'use strict';
 
-  return char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u';
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  return vowels.reduce((carry, vowel) => {
+    if (vowel === char) {
+      return true;
+    }
+
+    return carry;
+  }, false);
 }
+
+console.assert(isVowel('x') === false);
+console.assert(isVowel('u') === true);
 
 // ---------------------
 // Write a function translate() that will translate a text into "rövarspråket".
