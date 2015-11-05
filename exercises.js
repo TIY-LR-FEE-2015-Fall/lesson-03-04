@@ -65,17 +65,27 @@ function translate(phrase) {
 console.assert(translate('it') === 'itot');
 
 // ---------------------
-// Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
+// Define a function sum() and a function multiply() that sums and multiplies (respectively)
+// all the numbers in an array of numbers.
+// For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
 // ---------------------
 
-function sum() {
+function sum(numbers) {
   'use strict';
-  //...
+
+  return numbers.reduce((total, item) => {
+    return total + item;
+  });
 }
 
-function multiply() {
+sum([1, 2, 3, 4]);
+
+function multiply(numbers) {
   'use strict';
-  //...
+
+  return numbers.reduce((total, item) => {
+    return total * item;
+  });
 }
 
 // ---------------------
