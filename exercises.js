@@ -32,15 +32,10 @@ function maxOfAll() {
 function isVowel(char) {
   'use strict';
 
-  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  var vowels = ['a', 'e', 'i', 'o', 'u', 'é', 'í'];
 
-  return vowels.reduce((carry, vowel) => {
-    if (vowel === char) {
-      return true;
-    }
-
-    return carry;
-  }, false);
+  // indexOf returns -1 when outside of the array
+  return vowels.indexOf(char) > -1;
 }
 
 console.assert(isVowel('x') === false);
